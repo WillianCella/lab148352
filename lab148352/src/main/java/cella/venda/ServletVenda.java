@@ -1,4 +1,4 @@
-package cella.servlet.venda;
+package cella.venda;
 
 import java.io.IOException;
 
@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/venda")
-public class Venda extends HttpServlet implements Serializable {
+public class ServletVenda extends HttpServlet implements Serializable {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
