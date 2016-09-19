@@ -19,16 +19,17 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/venda")
 public class ServletVenda extends HttpServlet implements Serializable {
 	private static final long serialVersionUID = 1L;
-	@Inject
-	ProcessVenda pv;
+
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		Venda venda = new Venda();
-		venda.setId(1);
-		venda.setDescricao("primeiro");
-		venda.setValor(new BigDecimal("10"));
-		
-		pv.processarVenda(venda);
+		resp.setContentType("text/html");
+		resp.getWriter().println("Realizando a venda");
+		// Venda venda = new Venda();
+		// venda.setId(1);
+		// venda.setDescricao("primeiro");
+		// venda.setValor(new BigDecimal("10"));
+		//
+		// pv.processarVenda(venda);
 	}
 }

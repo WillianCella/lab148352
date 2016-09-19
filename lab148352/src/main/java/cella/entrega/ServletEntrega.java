@@ -22,20 +22,20 @@ import cella.venda.Venda;
 @WebServlet("/entrega")
 public class ServletEntrega extends HttpServlet implements Serializable {
 	private static final long serialVersionUID = 1L;
-	@Inject
-	ProcessEntrega pe;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		Entrega entrega = new Entrega();
-		
-		entrega.setEndereco("Rua dos bobos numero zero");
-		Venda v = new Venda();
-		v.setId(123);
-		v.setDescricao("Rolas Voadoras");
-		entrega.setVenda(v);
-		
-		pe.processarEntrega(entrega);
+		resp.setContentType("text/html");
+		resp.getWriter().println("Realizando a entrega");
+
+		// Entrega entrega = new Entrega();
+		//
+		// entrega.setEndereco("Rua dos bobos numero zero");
+		// Venda v = new Venda();
+		// v.setId(123);
+		// v.setDescricao("Rolas Voadoras");
+		// entrega.setVenda(v);
+		//
+		// pe.processarEntrega(entrega);
 	}
 }
