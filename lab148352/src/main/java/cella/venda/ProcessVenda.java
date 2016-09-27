@@ -10,10 +10,8 @@ public class ProcessVenda {
 	
 	@Inject
 	private Config config;
-	
-	public void processarVenda(Venda venda) {
-		
+
+	public void processarVenda(Venda venda) {		
 		config.context.createProducer().send(config.topic, venda);
-		
 	}
 }

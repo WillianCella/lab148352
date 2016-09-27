@@ -21,7 +21,7 @@ public class VendaWs {
 	public Venda vender() {
 		Venda venda = new Venda();
 		ArrayList<Venda> lista = new ArrayList<>();
-		venda.setListaVenda(lista);
+		//venda.setListaVenda(lista);
 		venda.setId(1);
 		venda.setDescricao("Teste");
 		venda.setValor(new BigDecimal("5"));

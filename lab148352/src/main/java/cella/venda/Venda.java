@@ -5,9 +5,15 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 
 public class Venda implements Serializable {
+	@Override
+	public String toString() {
+		return "Venda [id=" + id + ", descricao=" + descricao + ", listaVenda=" + listaVenda + ", valor=" + valor + "]";
+	}
+
 	private static final long serialVersionUID = 1L;
 	private int id;
 	private String descricao;
+	ArrayList<String> listaVenda = new ArrayList<>();
 
 	public int getId() {
 		return id;
@@ -33,14 +39,14 @@ public class Venda implements Serializable {
 		this.valor = valor;
 	}
 
-	public ArrayList<Venda> getListaVenda() {
+	private BigDecimal valor;
+
+	public ArrayList<String> getListaVenda() {
 		return listaVenda;
 	}
 
-	public void setListaVenda(ArrayList<Venda> listaVenda) {
+	public void setListaVenda(ArrayList<String> listaVenda) {
 		this.listaVenda = listaVenda;
 	}
 
-	private BigDecimal valor;
-	ArrayList<Venda> listaVenda = new ArrayList<>();
 }

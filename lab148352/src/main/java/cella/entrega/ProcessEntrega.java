@@ -9,7 +9,7 @@ import cella.config.Config;
 public class ProcessEntrega {
 
 	@Inject
-	Config config;
+	private Config config;
 	
 	public void processarEntrega(Entrega entrega) {
 		config.context.createProducer().send(config.queue, entrega);

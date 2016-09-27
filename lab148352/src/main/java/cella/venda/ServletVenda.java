@@ -20,16 +20,21 @@ import javax.servlet.http.HttpServletResponse;
 public class ServletVenda extends HttpServlet implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@Inject
+	ProcessVenda pv;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.setContentType("text/html");
-		resp.getWriter().println("Realizando a venda");
-		// Venda venda = new Venda();
-		// venda.setId(1);
-		// venda.setDescricao("primeiro");
-		// venda.setValor(new BigDecimal("10"));
-		//
-		// pv.processarVenda(venda);
+		resp.getWriter().println("");
+		for (int i = 0; i < 3; i++) {
+			Venda venda = new Venda();
+			venda.setId(1);
+			venda.setDescricao("venda " + i);
+			venda.setValor(new BigDecimal("10"));
+			System.out.println("Realizando a venda");
+			pv.processarVenda(venda);
+			System.out.println("Concluído!");
+		}
 	}
 }
